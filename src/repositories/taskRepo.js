@@ -10,3 +10,8 @@ export async function create(data) {
     data,
   });
 }
+
+// Get tasks, completed, or not, or all
+export async function getTasks(completedT) {
+  return prisma.task.findMany({ where: { completed: completedT } });
+}
